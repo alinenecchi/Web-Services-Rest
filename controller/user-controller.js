@@ -88,7 +88,7 @@ async function loginUser(request, response, next) {
         email: user.email,
       };
 
-      const token = jwt.sign(payload, 1244);
+      const token = jwt.sign(payload, process.env.JWT_KEY);
       return response.json({message: "Login Success", token});
     }
   }
