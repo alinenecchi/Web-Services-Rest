@@ -88,7 +88,7 @@ async function loginUser(request, response, next) {
         email: user.email,
       };
 
-      const token = jwt.sign(payload, process.env.JWT_KEY);
+      const token = jwt.sign(payload, 1244);
       return response.json({message: "Login Success", token});
     }
   }
@@ -100,7 +100,7 @@ async function loginUser(request, response, next) {
 
 async function updateUser(request, response, next) {
   const loggedInUser = request.session.user;
-  console.log("LOggedIn User", loggedInUser);
+  console.log("LoggedIn User", loggedInUser);
 
   const schema = Joi.object({
     phone: Joi.string().min(10).max(12),
@@ -120,7 +120,7 @@ async function updateUser(request, response, next) {
 }
 async function updateUserById(request, response, next) {
   const user_id = request.params.user_id;
-  console.log("LOggedIn User", request.body);
+  console.log("LoggedIn User", request.body);
 
   let user = await User.findById(user_id);
   user = Object.assign(user, request.body);
