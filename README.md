@@ -1,6 +1,6 @@
 # Web-Services-Rest
 
-A simples CRUD example by using NodeJS,and MongoDB.
+A simples CRUD example by using NodeJS and MongoDB.
 
 ## Technologies:
 
